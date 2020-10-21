@@ -1,1 +1,1 @@
-worker: main.py
+worker: mybot/main.py
