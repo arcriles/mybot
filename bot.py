@@ -33,7 +33,7 @@ async def clear(ctx, amount =5):
     await ctx.send ('cleared messages' +amount)
 
 #UMUM
-@client.command()
+@client.command() #mengecek ping
 async def ping(ctx):
     await ctx.send(f'the current latency is: {round(client.latency *1000)}ms')
 
@@ -55,6 +55,7 @@ async def ihateyou(ctx):
 
 @client.command() #fuck
 async def fuck (ctx, nama:str):
+    await ctx.channel.purge(1)
     await ctx.send('fuck you '+nama+' uwu\nhttps://giphy.com/embed/l0MYQCtMEe5WUrskg')
 
 @client.command() #hug
@@ -105,7 +106,11 @@ async def help(ctx):
     embed.add_field(name='buyungpuyuh', value='local meme for you', inline=False)
     embed.add_field(name='ping', value='check your latency', inline=False)
     embed.add_field(name='clear', value='delete some messages', inline=False)
-    embed.add_field(name='test', value='tadaaa!', inline=False)
+    embed.add_field(name='fuck', value='send a fuck message to a people you hate in the server', inline=False)
+    embed.add_field(name='hug', value='send a virtual hug for you', inline=False)
+    embed.add_field(name='goodnight', value='send a warm message to make you sleep well', inline=False)
+    embed.add_field(name='goodmorning', value='send a warm message to start your day', inline=False)
+    embed.add_field(name='creator', value='to see the contact from the man who builds it', inline=False)
 
     await ctx.send(author, embed=embed)
 
